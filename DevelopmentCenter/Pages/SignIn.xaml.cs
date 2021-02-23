@@ -1,6 +1,4 @@
-﻿using DevelopmentCenter.Classes;
-using DevelopmentCenter.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DevelopmentCenter
+namespace DevelopmentCenter.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SignIn.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SignIn : Page
     {
-        public MainWindow()
+        public SignIn()
         {
             InitializeComponent();
-            MainFrame.Navigate(new SignIn());
-            NavManager.MainFrame = MainFrame;
         }
     }
 }

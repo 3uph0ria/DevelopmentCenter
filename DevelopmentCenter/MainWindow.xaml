@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DevelopmentCenter"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Icon="Resources/logo.ico"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button></Button>
+        <Frame Name="Центр развития образования Волгограда"></Frame>
     </Grid>
 </Window>
