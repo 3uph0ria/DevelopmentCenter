@@ -1,0 +1,56 @@
+﻿using DevelopmentCenter.Classes;
+using DevelopmentCenter.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace DevelopmentCenter.Pages
+{
+    /// <summary>
+    /// Логика взаимодействия для AddEditProgramms.xaml
+    /// </summary>
+    public partial class AddEditProgramms : Page
+    {
+        private Programms currentProgram = new Programms();
+        public AddEditProgramms(Programms selectProgramm)
+        {
+            InitializeComponent();
+            if (selectProgramm != null)
+                currentProgram = selectProgramm;
+            DataContext = currentProgram;
+            CBoxTeachers.ItemsSource = DevelopmentCenterEntities.GetContext().Teachers.ToList();
+        }
+
+        private void BtnSaveProgramm_Click(object sender, RoutedEventArgs e)
+        {
+            Teachers p = (Teachers)CBoxTeachers.SelectedItem;
+
+            if(currentProgram.Id == 0)
+                DevelopmentCenterEntities.GetContext().Programms.Add(currentProgram);
+
+            try
+            {
+                currentProgram.IdTeacher = p.Id;
+                currentProgram.Name = currentProgram.Name.Trim();
+                DevelopmentCenterEntities.GetContext().SaveChanges();
+                MessageBox.Show("Изменения успешно сохранены", "", MessageBoxButton.OK);
+                NavManager.AccountFrane.Navigate(new PageProgramms());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+    }
+}

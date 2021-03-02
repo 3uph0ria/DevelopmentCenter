@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DevelopmentCenter"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
         Icon="Resources/logo.ico"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Центр развития образования Волгограда" Height="630" Width="1209.2">
     <Grid>
-        <Frame Name="Центр развития образования Волгограда"></Frame>
+        <Frame NavigationUIVisibility="Hidden" Name="MainFrame"></Frame>
     </Grid>
 </Window>

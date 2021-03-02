@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace DevelopmentCenter.Classes
 {
-    class NavManager
+    class CurrentUser
     {
-        public static Frame MainFrame;
-        public static Frame AccountFrane;
+        public static int Id;
+        public static string Fullname;
+        public static int Type;
     }
 }
